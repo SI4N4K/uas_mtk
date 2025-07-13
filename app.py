@@ -68,17 +68,3 @@ if st.button("Hitung Solusi Optimal"):
             st.info("Visualisasi hanya tersedia untuk 2 produk.")
     else:
         st.error("Tidak ditemukan solusi optimal. Periksa kembali input Anda.")
-            ax.fill_between(x1, 0, x2, where=(x2>0), color='lightgreen', alpha=0.5, label='Area Feasible')
-
-            ax.plot(res.x[0], res.x[1], 'ro', label='Solusi Optimal')
-
-            ax.set_xlabel(produk_names[0])
-            ax.set_ylabel(produk_names[1])
-            ax.set_xlim(left=0)
-            ax.set_ylim(bottom=0)
-            ax.legend()
-            st.pyplot(fig)
-        else:
-            st.info("Visualisasi hanya tersedia untuk 2 produk.")
-    else:
-        st.error("Tidak ditemukan solusi optimal. Periksa kembali input Anda.")
