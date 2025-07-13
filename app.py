@@ -19,11 +19,11 @@ for i in range(int(num_produk)):
     produk_names.append(st.text_input(f"Nama Produk ke-{i+1}", value=f"Produk {chr(65+i)}"))
     keuntungan.append(st.number_input(f"Keuntungan per unit {produk_names[-1]}", min_value=0.0, value=5000.0))
     waktu.append(st.number_input(f"Waktu per unit (jam) {produk_names[-1]}", min_value=0.0, value=2.0))
-    bahan_baku.append(st.number_input(f"Bahan baku per unit (kg) {produk_names[-1]}", min_value=0.0, value=3.0))
+    bahan_baku.append(st.number_input(f"Bahan baku per unit (matrial) {produk_names[-1]}", min_value=0.0, value=3.0))
 
 st.header("Input Batasan Sumber Daya")
 total_waktu = st.number_input("Total waktu tersedia (jam)", min_value=0.0, value=60.0)
-total_bahan = st.number_input("Total bahan baku tersedia (kg)", min_value=0.0, value=40.0)
+total_bahan = st.number_input("Total bahan baku tersedia (matrial)", min_value=0.0, value=40.0)
 
 if st.button("Hitung Solusi Optimal"):
     # Membuat fungsi tujuan (maksimasi keuntungan)
