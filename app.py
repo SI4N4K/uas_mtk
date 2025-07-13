@@ -41,30 +41,7 @@ if st.button("Hitung Solusi Optimal"):
             st.write(f"{produk_names[i]}: {res.x[i]:.2f} unit")
         st.write(f"Total keuntungan maksimal: Rp {(-res.fun):,.0f}")
 
-        if int(num_produk) == 2:
-            st.subheader("Visualisasi Area Feasible dan Solusi Optimal")
-            fig, ax = plt.subplots()
-
-            x1 = np.linspace(0, max(b[0]/waktu[0], b[1]/bahan_baku[0], 20))
-            x2_waktu = (total_waktu - waktu[0]*x1) / waktu[1]
-            x2_bahan = (total_bahan - bahan_baku[0]*x1) / bahan_baku[1]
-
-            ax.plot(x1, x2_waktu, label='Kendala Waktu')
-            ax.plot(x1, x2_bahan, label='Kendala Bahan Baku')
-
-            x2 = np.minimum(x2_waktu, x2_bahan)
-            x2 = np.maximum(x2, 0)
-            ax.fill_between(x1, 0, x2, where=(x2>0), color='magenta', alpha=0.5, label='Area Feasible')
-
-            ax.plot(res.x[0], res.x[1], 'ro', label='Solusi Optimal')
-
-            ax.set_xlabel(produk_names[0])
-            ax.set_ylabel(produk_names[1])
-            ax.set_xlim(left=0)
-            ax.set_ylim(bottom=0)
-            ax.legend()
-            st.pyplot(fig)
-       if res.success:
+           if res.success:
     st.subheader("Hasil Optimasi")
     for i in range(int(num_produk)):
         st.write(f"{produk_names[i]}: {res.x[i]:.2f} unit")
