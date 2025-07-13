@@ -54,7 +54,7 @@ if st.button("Hitung Solusi Optimal"):
 
             x2 = np.minimum(x2_waktu, x2_bahan)
             x2 = np.maximum(x2, 0)
-            ax.fill_between(x1, 0, x2, where=(x2>0), color='lightgreen', alpha=0.5, label='Area Feasible')
+            ax.fill_between(x1, 0, x2, where=(x2>0), color='magenta', alpha=0.5, label='Area Feasible')
 
             ax.plot(res.x[0], res.x[1], 'ro', label='Solusi Optimal')
 
