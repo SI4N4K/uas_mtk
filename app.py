@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.optimize import linprog
 
-st.title("Aplikasi Optimasi Produksi (Linear Programming)")
+st.title("Aplikasi Optimasi Produksi (jumlah matrial dan waktu terbatas)")
 
 num_produk = st.number_input("Masukkan jumlah produk (minimal 2)", min_value=2, max_value=10, value=2, step=1)
 
